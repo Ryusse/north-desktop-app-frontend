@@ -17,6 +17,7 @@ interface Props {
   children: ReactNode;
   type?: ButtonType;
   position?: Position;
+  onClick?: () => void;
 }
 
 export const Button = ({
@@ -25,11 +26,17 @@ export const Button = ({
   children,
   type = 'submit',
   position = 'left',
+  onClick,
 }: Props) => {
   //const { classes } = buttonStyles({ classButton, width, position });
 
   return (
-    <StyledButton classbutton={classButton} type={type} width={width}>
+    <StyledButton
+      onClick={onClick}
+      classbutton={classButton}
+      type={type}
+      width={width}
+    >
       {children}
     </StyledButton>
   );
