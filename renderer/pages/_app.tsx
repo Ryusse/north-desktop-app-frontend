@@ -3,6 +3,7 @@ import { FC } from 'react';
 import type { EmotionCache } from '@emotion/react';
 import { AppProps } from 'next/app';
 
+import { GeneralProvider } from '@/context';
 import PageProvider from '@/helpers/PageProvider';
 
 export interface MUIAppProps extends AppProps {
@@ -11,7 +12,9 @@ export interface MUIAppProps extends AppProps {
 
 const App: FC<MUIAppProps> = ({ Component, pageProps, emotionCache }) => (
   <PageProvider emotionCache={emotionCache}>
-    <Component {...pageProps} />
+    <GeneralProvider>
+      <Component {...pageProps} />
+    </GeneralProvider>
   </PageProvider>
 );
 

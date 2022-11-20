@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import { ReactNode, FC } from 'react';
 
 import { CacheProvider } from '@emotion/react';
 import type { EmotionCache } from '@emotion/react';
@@ -12,7 +12,7 @@ const clientSideEmotionCache = createEmotionCache();
 
 interface PageProviderProps {
   emotionCache?: EmotionCache;
-  children: React.ReactNode;
+  children: ReactNode;
 }
 
 const PageProvider: FC<PageProviderProps> = ({

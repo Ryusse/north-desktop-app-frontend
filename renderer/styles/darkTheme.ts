@@ -1,9 +1,5 @@
 import { createTheme } from '@mui/material';
 
-export type AllowedTheme = NonNullable<any['mode']>;
-
-export const DEFAULT_THEME: AllowedTheme = 'light';
-
 import {
   northBody1,
   northBody2,

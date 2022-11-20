@@ -1,16 +1,22 @@
-import { Box, Container, Paper, Typography } from '@material-ui/core';
+import { useTheme } from 'next-themes';
 import Head from 'next/head';
 
 import { Button } from '@/elements/atoms';
 
 const Home = () => {
+  const { theme, resolvedTheme, setTheme } = useTheme();
+
   return (
     <>
       <Head>
-        <title>Home - Nextron (with-typescript-material-ui)</title>
+        <title>North | Home</title>
       </Head>
       <div>
-        <Button classButton="primary" position="center">
+        <Button
+          onClick={() => setTheme(resolvedTheme === 'light' ? 'dark' : 'light')}
+          classButton="primary"
+          position="center"
+        >
           Cambiar tema
         </Button>
       </div>
