@@ -9,7 +9,7 @@ import { NorthLightTheme } from '../../../styles/lightTheme';
 
 const MUIThemeProvider: FC<{ children: React.ReactNode }> = ({ children }) => {
   const { resolvedTheme } = useTheme();
-  const [currentTheme, setCurrentTheme] = useState(NorthDarkTheme);
+  const [currentTheme, setCurrentTheme] = useState(NorthLightTheme);
 
   useEffect(() => {
     resolvedTheme === 'light'

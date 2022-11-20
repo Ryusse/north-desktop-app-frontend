@@ -1,3 +1,4 @@
+import { Box, Container, Paper, Typography } from '@material-ui/core';
 import Head from 'next/head';
 
 import { Button } from '@/elements/atoms';
@@ -9,11 +10,9 @@ const Home = () => {
         <title>Home - Nextron (with-typescript-material-ui)</title>
       </Head>
       <div>
-        <Button buttonName="primary" width="contained" position="center">
-          Postula ahora
+        <Button classButton="primary" position="center">
+          Cambiar tema
         </Button>
-
-        <h1>Home</h1>
       </div>
     </>
   );

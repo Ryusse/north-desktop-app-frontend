@@ -1,8 +1,8 @@
-import { createTheme, css } from '@mui/material';
+import { createTheme } from '@mui/material';
 
 export type AllowedTheme = NonNullable<any['mode']>;
 
-export const DEFAULT_THEME: AllowedTheme = 'dark';
+export const DEFAULT_THEME: AllowedTheme = 'light';
 
 import {
   northBody1,
@@ -15,26 +15,32 @@ import { northFontFamily } from './utils';
 
 export const NorthDarkTheme = createTheme({
   palette: {
+    mode: 'dark',
+    common: {
+      black: '#171C28',
+      white: '#ffffff',
+    },
     primary: {
       main: '#DE3151',
       dark: '#C52441',
     },
-
     secondary: {
       main: '#353CEE',
       dark: '#282ECA',
     },
-
     grey: {
       400: '#D4D4D4',
       900: '#333F51',
     },
-
     text: {
-      primary: '#333F51',
-      secondary: '#8E9BAE',
+      primary: '#B9BBBE',
+      secondary: '#5A5D66',
     },
-    mode: 'dark',
+    divider: '#1E232E',
+    background: {
+      paper: '#171C28',
+      default: '#262C39',
+    },
   },
   typography: {
     fontFamily: northFontFamily,
@@ -44,7 +50,6 @@ export const NorthDarkTheme = createTheme({
     body2: northBody2,
     subtitle1: northSubtitle1,
   },
-
   breakpoints: {
     values: {
       xs: 0,
