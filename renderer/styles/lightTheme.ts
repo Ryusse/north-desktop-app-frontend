@@ -24,6 +24,9 @@ export const NorthLightTheme = createTheme({
       main: '#353CEE',
       dark: '#282ECA',
     },
+    error: {
+      main: '#b00020',
+    },
     grey: {
       400: '#D4D4D4',
       900: '#333F51',
@@ -32,7 +35,7 @@ export const NorthLightTheme = createTheme({
       primary: '#596080',
       secondary: '#9EA2B8',
     },
-    divider: '#5822b9',
+    divider: '#F4F5F7',
     background: {
       paper: '#ffffff',
       default: '#F4F5F7',

@@ -4,7 +4,7 @@
     "paths": {
       "@particles/*": ["./renderer/shared/elements/particles/*"],
       "@/*": ["./renderer/shared/*"],
-      "@styles/*": ["renderer/lib/*"]
+      "@styles/*": ["./renderer/styles/*"]
     },
     "target": "es5",
     "lib": [

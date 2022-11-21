@@ -2,14 +2,10 @@ import { ReactNode } from 'react';
 
 import { StyledButton } from './styles';
 
-export type ButtonName =
-  | 'primary'
-  | 'secondary'
-  | 'white-outline'
-  | 'black-outline';
-export type ButtonType = 'submit' | 'button';
-export type Width = 'contained' | 'full';
-export type Position = 'left' | 'center' | 'right';
+type ButtonName = 'primary' | 'secondary' | 'default-outline';
+type ButtonType = 'submit' | 'button';
+type Width = 'contained' | 'full';
+type Position = 'left' | 'center' | 'right';
 
 interface Props {
   classButton?: ButtonName;

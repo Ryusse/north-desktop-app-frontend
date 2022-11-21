@@ -24,6 +24,9 @@ export const NorthDarkTheme = createTheme({
       main: '#353CEE',
       dark: '#282ECA',
     },
+    error: {
+      main: '#cf6679',
+    },
     grey: {
       400: '#D4D4D4',
       900: '#333F51',

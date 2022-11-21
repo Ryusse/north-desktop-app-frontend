@@ -22,22 +22,14 @@ const classButtonStyles = (classbutton: string, theme) => {
     case 'primary':
       return css`
         background-color: ${theme.palette.primary.main};
-        color: ${theme.palette.divider};
+        color: ${theme.palette.common.white};
         border-color: ${theme.palette.primary.main};
-        box-shadow: 0px 10px 20px rgba(222, 49, 81, 0.3);
-      }
-        
+        box-shadow: 0 10px 20px rgba(222, 49, 81, 0.3);
       `;
-    case 'black-outline':
+    case 'default-outline':
       return css`
         background-color: transparent;
-        font-size: 1.6rem;
-        ${theme.palette.primary.main}
-      `;
-    case 'white-outline':
-      return css`
-        height: 4rem;
-        font-size: 1.4rem;
+        border-color: ${theme.palette.primary.white};
       `;
   }
 };
