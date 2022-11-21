@@ -37,6 +37,7 @@ export const LoginForm = () => {
   return (
     <StyledFormContainer onSubmit={handleSubmit(onSubmit)}>
       <StyledTile variant="subtitle1">Bienvenido de nuevo</StyledTile>
+      <StyledTile variant="body1">Bienvenido de nuevo</StyledTile>
 
       <Stack spacing={4}>
         <Controller
