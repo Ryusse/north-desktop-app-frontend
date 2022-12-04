@@ -18,7 +18,8 @@ export const NorthLightTheme = createTheme({
     },
     primary: {
       main: '#DE3151',
-      dark: '#C52441',
+      dark: '#d8163a',
+      light: '#de4662',
     },
     secondary: {
       main: '#353CEE',

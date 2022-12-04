@@ -1,88 +1,87 @@
-import { Box, Container, styled } from '@mui/material';
-import css from 'styled-jsx/css';
+import { Box, Typography, styled, alpha } from '@mui/material';
 
-export const StyledLayout = styled(Box)(
-  ({ theme }) => `
-    ${layout(theme)}
-  `
-);
+export const StyledLayout = styled(Box)(({ theme }) => ({
+  overflow: 'hidden',
+  position: 'relative',
+  width: '100%',
+  height: 'auto',
+  display: 'grid',
+  gridTemplateRows: '48px auto 48px',
+  padding: '1rem',
 
-export const StyledLogoContainer = styled(Box)(
-  ({ theme }) => `
-    ${logoContainer()}
-  `
-);
+  [theme.breakpoints.up('md')]: {
+    height: '100vh',
+    padding: '1.5rem',
+  },
+}));
 
-export const StyledLogoName = styled(Box)(
-  ({ theme }) => `
-    ${logoName(theme)}
-  `
-);
+export const StyledLogoContainer = styled(Box)({
+  justifySelf: 'start',
+  zIndex: 2,
+  display: 'flex',
+  gap: '10px',
+  alignItems: 'center',
+  marginRight: 'auto',
 
-export const StyledFormContainer = styled(Box)(
-  ({ theme }) => `
-    ${formContainer()}
-  `
-);
+  '& .shadow': {
+    boxShadow: '0 10px 20px rgba(222, 49, 81, 0.3)',
+    borderRadius: '1rem',
+  },
+});
 
-export const StyledImageContainer = styled(Box)(
-  ({ theme }) => `
-    ${imageContainer()}
-  `
-);
+export const StyledLogoName = styled(Box)(({ theme }) => ({
+  color: theme.palette.common.white,
+  fontSize: '1.25rem',
+}));
 
-const layout = (theme) => {
-  return css`
-    position: relative;
-    width: 100%;
-    display: grid;
-    grid-template-columns: 0.5fr 1fr;
-    height: 100vh;
-    background-color: ${theme.palette.background.paper};
-  `;
-};
+export const StyledFormContainer = styled(Box)(({ theme }) => ({
+  background: theme.palette.background.paper,
+  margin: 'auto',
+  zIndex: 2,
+  borderRadius: '1rem',
+  width: '100%',
+  padding: '1.5rem',
+  height: 'auto',
+  backgroundColor: theme.palette.background.paper,
+  boxsShadow: 'rgb(0 0 0 / 15%) 0 2px 8px',
 
-const formContainer = () => {
-  return css`
-    min-width: 360px;
-    padding: 3rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  `;
-};
+  [theme.breakpoints.up('md')]: {
+    maxWidth: '25rem',
+  },
+}));
 
-const logoContainer = () => {
-  return css`
-    position: absolute;
-    display: flex;
-    gap: 10px;
-    align-items: center;
-    margin-right: auto;
-    margin-bottom: 5rem;
-    top: 3rem;
-    left: 3rem;
+export const StyledOverlay = styled(Box)(({ theme }) => ({
+  zIndex: 1,
+  width: '100%',
+  position: 'absolute',
+  top: 0,
+  left: 0,
+  height: '100%',
+  margin: 0,
+  padding: 0,
+  backdropFilter: 'blur(20px)',
+  backgroundColor: alpha(theme.palette.background.paper, 0.3),
+}));
 
-    & .shadow {
-      box-shadow: 0 10px 20px rgba(222, 49, 81, 0.3);
-      border-radius: 1rem;
-    }
-  `;
-};
+export const StyledImageContainer = styled(Box)({
+  width: '100%',
+  position: 'absolute',
+  top: 0,
+  left: 0,
+  height: '100%',
+  margin: 0,
+  padding: 0,
+});
 
-const logoName = (theme) => {
-  return css`
-    color: ${theme.palette.common.white};
-    font-size: 1.25rem;
-  `;
-};
+export const StyledFooter = styled(Box)({
+  zIndex: 2,
+  width: '100%',
+  display: 'grid',
+  placeContent: 'center',
+});
 
-const imageContainer = () => {
-  return css`
-    width: 100%;
-    position: relative;
-    margin: 0;
-    padding: 0;
-  `;
-};
+export const StyledFooterText = styled(Typography)(({ theme }) => ({
+  color: theme.palette.common.white,
+  fontSize: '0.8rem',
+  fontWeight: '400',
+}));

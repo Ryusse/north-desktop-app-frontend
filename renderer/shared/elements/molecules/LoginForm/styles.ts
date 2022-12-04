@@ -1,4 +1,4 @@
-import { Box, styled, Typography } from '@mui/material';
+import { styled, Typography } from '@mui/material';
 import css from 'styled-jsx/css';
 
 export const StyledFormContainer = styled('form')(
@@ -22,8 +22,8 @@ const FormContainerStyles = () => {
 
 const TileStyles = (theme) => {
   return css`
+    text-align: center;
     margin-bottom: 2.5rem;
     font-weight: 600;
-    //color: ${theme.palette.grey[900]};
   `;
 };

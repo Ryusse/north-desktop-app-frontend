@@ -13,6 +13,7 @@ interface Props {
   children: ReactNode;
   type?: ButtonType;
   position?: Position;
+  disabled?: boolean;
   onClick?: () => void;
 }
 
@@ -22,12 +23,12 @@ export const Button = ({
   children,
   type = 'submit',
   position = 'left',
+  disabled = true,
   onClick,
 }: Props) => {
-  //const { classes } = buttonStyles({ classButton, width, position });
-
   return (
     <StyledButton
+      disabled={disabled}
       onClick={onClick}
       classbutton={classButton}
       type={type}

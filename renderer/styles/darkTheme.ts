@@ -18,7 +18,9 @@ export const NorthDarkTheme = createTheme({
     },
     primary: {
       main: '#DE3151',
-      dark: '#C52441',
+      dark: '#d8163a',
+      light: '#de4662',
+      contrastText: '#fff',
     },
     secondary: {
       main: '#353CEE',
@@ -37,7 +39,7 @@ export const NorthDarkTheme = createTheme({
     },
     divider: '#1E232E',
     background: {
-      paper: '#171C28',
+      paper: 'rgb(23, 28, 40)',
       default: '#262C39',
     },
   },

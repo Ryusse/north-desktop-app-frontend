@@ -32,24 +32,34 @@ export const LoginForm = () => {
     console.log(data);
   };
 
+  console.log('Email=>', watch('email'));
+
   const { theme, resolvedTheme, setTheme } = useTheme();
 
   return (
     <StyledFormContainer onSubmit={handleSubmit(onSubmit)}>
-      <StyledTile variant="subtitle1">Bienvenido de nuevo</StyledTile>
-      <StyledTile variant="body1">Bienvenido de nuevo</StyledTile>
+      <StyledTile variant="h1">Bienvenido de nuevo</StyledTile>
 
-      <Stack spacing={4}>
+      <Stack spacing={3}>
         <Controller
           name="email"
           control={control}
-          rules={{ required: true }}
+          rules={{ required: true, minLength: 8 }}
           render={({ field }) => (
             <Input
               {...field}
-              isError={Boolean(errors.email)}
               name="email"
               placeholder="Ingresa tu email"
+              isError={Boolean(errors.email)}
+              textError={`${
+                errors && errors.email?.type === 'required'
+                  ? 'Este campo es requerido'
+                  : ''
+              } ${
+                errors && errors.email?.type === 'minLength'
+                  ? 'Mínimo ocho caracteres'
+                  : ''
+              }`}
             />
           )}
         />
@@ -61,16 +71,31 @@ export const LoginForm = () => {
           render={({ field }) => (
             <Input
               {...field}
-              isError={Boolean(errors.password)}
+              type="password"
               name="password"
               placeholder="Ingresa tu contraseña"
+              isError={Boolean(errors.password)}
+              textError={`${
+                errors && errors.email?.type === 'required'
+                  ? 'Este campo es requerido'
+                  : ''
+              } ${
+                errors && errors.email?.type === 'minLength'
+                  ? 'Mínimo ocho caracteres'
+                  : ''
+              }`}
             />
           )}
         />
       </Stack>
 
-      <Stack marginTop={8} spacing={4}>
-        <Button type="submit" width="full" classButton="primary">
+      <Stack marginTop={5} spacing={3}>
+        <Button
+          type="submit"
+          width="full"
+          classButton="primary"
+          disabled={true}
+        >
           Ingresar
         </Button>
 

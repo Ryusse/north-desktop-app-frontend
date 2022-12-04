@@ -3,22 +3,17 @@ import { createTheme } from '@mui/material';
 const theme = createTheme();
 
 export const northH1 = (theme.typography.h1 = {
-  fontSize: '2rem',
-  lineHeight: '140%',
+  fontSize: '1.5rem !important',
+  lineHeight: '30px',
 
   [theme.breakpoints.up('sm')]: {
-    fontSize: '2.5rem',
-  },
-  [theme.breakpoints.up('md')]: {
-    fontSize: '3rem',
-  },
-  [theme.breakpoints.up('lg')]: {
-    fontSize: '3rem',
+    fontSize: '1.5rem',
+    lineHeight: '33px',
   },
 });
 
 export const northH2 = (theme.typography.h2 = {
-  fontSize: '1.6rem',
+  fontSize: '1.3rem',
   fontWeight: 700,
   lineHeight: '2.2rem',
 
@@ -39,7 +34,7 @@ export const northSubtitle1 = (theme.typography.subtitle1 = {
 });
 
 export const northBody1 = (theme.typography.body1 = {
-  fontSize: '1rem',
+  fontSize: '0.875rem',
   fontWeight: 500,
   lineHeight: '1.75rem',
 
