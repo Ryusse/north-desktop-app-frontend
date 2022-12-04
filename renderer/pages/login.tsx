@@ -31,12 +31,16 @@ const Login: NextPage = () => {
       <StyledOverlay></StyledOverlay>
       <StyledImageContainer>
         <Image
-          fill
-          src={LoginBackground?.src}
-          alt="login background image"
-          quality={40}
           placeholder="blur"
           blurDataURL={LoginBackground?.src}
+          src={LoginBackground?.src}
+          alt="auth background image"
+          quality={40}
+          priority
+          fill
+          sizes="(max-width: 768px) 100vw,
+          (max-width: 1200px) 50vw,
+          33vw"
           style={{ objectFit: 'cover' }}
         />
       </StyledImageContainer>

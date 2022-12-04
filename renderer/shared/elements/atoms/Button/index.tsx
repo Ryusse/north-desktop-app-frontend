@@ -23,7 +23,7 @@ export const Button = ({
   children,
   type = 'submit',
   position = 'left',
-  disabled = true,
+  disabled = false,
   onClick,
 }: Props) => {
   return (

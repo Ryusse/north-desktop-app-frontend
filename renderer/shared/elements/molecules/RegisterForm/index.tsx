@@ -3,18 +3,16 @@ import { useTheme } from 'next-themes';
 import { useRouter } from 'next/router';
 import { Controller, useForm } from 'react-hook-form';
 
+import { StyledFormContainer, StyledTile } from './styles';
 import { Button, Input } from '@/elements/atoms';
-import {
-  StyledFormContainer,
-  StyledTile,
-} from '@/elements/molecules/LoginForm/styles';
 
 type FormValues = {
+  user: string;
   email: string;
   password: string;
 };
 
-export const LoginForm = () => {
+export const RegisterForm = () => {
   const {
     register,
     handleSubmit,
@@ -30,21 +28,42 @@ export const LoginForm = () => {
 
   const router = useRouter();
 
-  const handleRedirectToRegister = () => {
-    router.replace('register');
+  const handleRedirectToLogin = () => {
+    router.replace('login');
   };
 
   const onSubmit = (data: FormValues) => {
     console.log(data);
   };
 
-  //const { resolvedTheme, setTheme } = useTheme();
-
   return (
     <StyledFormContainer onSubmit={handleSubmit(onSubmit)}>
-      <StyledTile variant="h1">Bienvenido de nuevo</StyledTile>
+      <StyledTile variant="h1">Crea tu cuenta</StyledTile>
 
       <Stack spacing={3}>
+        <Controller
+          name="user"
+          control={control}
+          rules={{ required: true, minLength: 8 }}
+          render={({ field }) => (
+            <Input
+              {...field}
+              name="user"
+              placeholder="Ingresa tu user"
+              isError={Boolean(errors.user)}
+              textError={`${
+                errors && errors.user?.type === 'required'
+                  ? 'Este campo es requerido'
+                  : ''
+              } ${
+                errors && errors.user?.type === 'minLength'
+                  ? 'Mínimo ocho caracteres'
+                  : ''
+              }`}
+            />
+          )}
+        />
+
         <Controller
           name="email"
           control={control}
@@ -95,7 +114,7 @@ export const LoginForm = () => {
 
       <Stack marginTop={5} spacing={3}>
         <Button type="submit" width="full" classButton="primary">
-          Ingresar
+          Crear cuenta
         </Button>
 
         <Divider flexItem>
@@ -103,13 +122,12 @@ export const LoginForm = () => {
         </Divider>
 
         <Button
-          //onClick={() => setTheme(resolvedTheme === 'light' ? 'dark' : 'light')}
+          onClick={handleRedirectToLogin}
           type="button"
           width="full"
           classButton="default-outline"
-          onClick={handleRedirectToRegister}
         >
-          Registrate
+          Iniciar sesión
         </Button>
       </Stack>
     </StyledFormContainer>

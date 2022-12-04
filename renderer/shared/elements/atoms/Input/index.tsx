@@ -1,5 +1,8 @@
 import { forwardRef } from 'react';
 
+import VisibilityIcon from '@mui/icons-material/Visibility';
+import { IconButton, InputAdornment } from '@mui/material';
+
 import { StyledInput, StyledHelperText } from './styles';
 
 type Width = 'full' | 'contained';
@@ -14,6 +17,7 @@ interface Props {
   isError?: any;
   type?: Type;
   onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  showIcon?: boolean;
 }
 
 export const Input = forwardRef<HTMLInputElement, Props>(
@@ -27,11 +31,14 @@ export const Input = forwardRef<HTMLInputElement, Props>(
       textError,
       isError,
       type,
+      showIcon = false,
+      ...props
     },
     ref
   ) => {
     return (
       <StyledInput
+        {...props}
         type={type}
         onChange={onChange}
         value={value ? value : ''}
@@ -40,6 +47,11 @@ export const Input = forwardRef<HTMLInputElement, Props>(
         ref={ref}
         InputProps={{
           className: 'input',
+          // endAdornment: (
+          //   <InputAdornment position="end">
+          //     {showIcon ? <VisibilityIcon color="error" /> : null}
+          //   </InputAdornment>
+          // ),
         }}
         width={width}
         placeholder={placeholder}

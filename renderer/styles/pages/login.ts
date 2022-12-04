@@ -1,19 +1,17 @@
 import { Box, Typography, styled, alpha } from '@mui/material';
 
-export const StyledLayout = styled(Box)(({ theme }) => ({
-  overflow: 'hidden',
-  position: 'relative',
+export const StyledLayout = styled(Box)({
   width: '100%',
-  height: 'auto',
+  position: 'relative',
   display: 'grid',
+  rowGap: '3rem',
   gridTemplateRows: '48px auto 48px',
   padding: '1rem',
 
-  [theme.breakpoints.up('md')]: {
+  '@media (min-height: 700px)': {
     height: '100vh',
-    padding: '1.5rem',
   },
-}));
+});
 
 export const StyledLogoContainer = styled(Box)({
   justifySelf: 'start',
