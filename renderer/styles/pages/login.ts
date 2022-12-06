@@ -16,21 +16,8 @@ export const StyledLayout = styled(Box)({
 export const StyledLogoContainer = styled(Box)({
   justifySelf: 'start',
   zIndex: 2,
-  display: 'flex',
-  gap: '10px',
-  alignItems: 'center',
   marginRight: 'auto',
-
-  '& .shadow': {
-    boxShadow: '0 10px 20px rgba(222, 49, 81, 0.3)',
-    borderRadius: '1rem',
-  },
 });
-
-export const StyledLogoName = styled(Box)(({ theme }) => ({
-  color: theme.palette.common.white,
-  fontSize: '1.25rem',
-}));
 
 export const StyledFormContainer = styled(Box)(({ theme }) => ({
   background: theme.palette.background.paper,

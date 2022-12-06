@@ -5,7 +5,12 @@ import {
   northBody2,
   northH1,
   northH2,
+  northH3,
+  northH4,
+  northH5,
+  northH6,
   northSubtitle1,
+  northSubtitle2,
 } from './typography';
 import { northFontFamily } from './utils';
 
@@ -37,19 +42,24 @@ export const NorthDarkTheme = createTheme({
       primary: '#B9BBBE',
       secondary: '#5A5D66',
     },
-    divider: '#1E232E',
+    divider: '#2E2F32',
     background: {
       paper: 'rgb(23, 28, 40)',
-      default: '#262C39',
+      default: '#232833',
     },
   },
   typography: {
     fontFamily: northFontFamily,
     h1: northH1,
     h2: northH2,
+    h3: northH3,
+    h4: northH4,
+    h5: northH5,
+    h6: northH6,
     body1: northBody1,
     body2: northBody2,
     subtitle1: northSubtitle1,
+    subtitle2: northSubtitle2,
   },
   breakpoints: {
     values: {

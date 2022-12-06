@@ -1,4 +1,3 @@
-import { Typography } from '@material-ui/core';
 import { NextPage } from 'next';
 import Image from 'next/image';
 
@@ -7,21 +6,19 @@ import {
   StyledImageContainer,
   StyledLayout,
   StyledLogoContainer,
-  StyledLogoName,
   StyledFormContainer,
   StyledOverlay,
   StyledFooter,
   StyledFooterText,
 } from '../styles/pages/login';
-import Icon from '@/elements/atoms/Icon';
+import { Logo } from '@/elements/atoms';
 import { RegisterForm } from '@/elements/molecules';
 
 const Register: NextPage = () => {
   return (
     <StyledLayout as="section">
       <StyledLogoContainer>
-        <Icon name="ic_logo" className="shadow" />
-        <StyledLogoName>North</StyledLogoName>
+        <Logo />
       </StyledLogoContainer>
 
       <StyledFormContainer>
